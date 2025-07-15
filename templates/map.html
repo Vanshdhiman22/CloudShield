@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌍 CloudShield Attack Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <style>
+        body { margin: 0; }
+        #map { height: 100vh; width: 100%; }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">🌍 CloudShield — Real-Time Attack Map</h2>
+<div id="map"></div>
+
+<script>
+    const attackData = {{ data | tojson }};
+    
+    const map = L.map('map').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a> contributors'
+    }).addTo(map);
+
+    attackData.forEach(entry => {
+        if (entry.lat && entry.lon) {
+            const marker = L.marker([entry.lat, entry.lon]).addTo(map);
+            marker.bindPopup(`<b>${entry.attack_type}</b><br>IP: ${entry.ip}`);
+        }
+    });
+</script>
+
+</body>
+</html>
+
