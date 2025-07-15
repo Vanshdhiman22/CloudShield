@@ -1,6 +1,5 @@
 # ☁️ CloudShield: Real-Time Cloud-Based Threat Detection System
 
-> 🚨 Built by Vansh Dhiman as part of a 45-day cybersecurity internship/training at Aarni University.
 
 CloudShield is a real-time threat detection and visualization system for AWS-like cloud environments. It analyzes log data, detects attack patterns, sends Telegram alerts, and visualizes threats on a dashboard and interactive world map.
 
