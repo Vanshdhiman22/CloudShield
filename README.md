@@ -77,8 +77,7 @@ Edit
 
 ## 👨‍💻 Author
 
-- **Name**: Vansh Dhiman  
-- **College**: Aarni University  
+- **Name**: Vansh Dhiman   
 - **GitHub**: [github.com/Vanshdhiman22](https://github.com/Vanshdhiman22)
 
 ---
